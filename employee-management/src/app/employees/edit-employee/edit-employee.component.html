@@ -1,0 +1,29 @@
+<form [formGroup]="createForm" (ngSubmit)="onCreateEmployeeSubmit(createForm)">
+
+    <nz-form-item>
+        <nz-form-label [nzRequired]="true">Name</nz-form-label>
+        <nz-form-control>
+            <input nz-input type="text" formControlName="name" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzRequired]="true">salary</nz-form-label>
+        <nz-form-control>
+            <input nz-input type="number" formControlName="salary" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzRequired]="true">age</nz-form-label>
+        <nz-form-control>
+            <input nz-input type="number" formControlName="age" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control>
+            <button nz-button nzType="primary" class="mr-2 bg-blue-600" type="submit" [disabled]="createForm.invalid">
+                Submit
+            </button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
