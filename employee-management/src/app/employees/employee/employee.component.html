@@ -1,1 +1,23 @@
-<p>employee works!</p>
+<h1>Employees</h1>
+<button nz-button nzType="primary" (click)="openCreateBlogModal()">cretae employee</button>
+<nz-table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of data">
+            <td>{{d.employee_name}}</td>
+            <td>{{d.employee_salary}}</td>
+            <td>{{d.employee_age}}</td>
+            <td>
+                <button nz-button nzType="primary" (click)="showEditEmployeeModal(d.id)">edit</button>
+                <button nz-button nzType="default" [routerLink]="['/employees/employee-detail', d.id]">details</button>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>
